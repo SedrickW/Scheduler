@@ -12,7 +12,6 @@
 #include <iostream>
 #include <ctime>/*RandomNum*/
 #include <cstdlib>/*RandomNum*/
-#include <random>
 #include <iomanip> /*main*/
 #include <fstream>/*WorkerSetup,GenerateOutputFile*/
 #include <sstream>/*GenerateOutputFile*/
