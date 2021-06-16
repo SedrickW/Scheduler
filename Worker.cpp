@@ -10,10 +10,7 @@
 #include <vector>
 
 //Header files
-
 #include "Worker.h"
-
-using namespace std;
 
 //class functions
 Worker::Worker()
@@ -28,7 +25,7 @@ Worker::Worker()
     }
 }
 
-Worker::Worker(int& ID, string& name, bool availability[], int scheduled_days[])
+Worker::Worker(int& ID, std::string& name, bool availability[], int scheduled_days[])
 {
     employee_name = name;
     employee_ID = ID;
@@ -38,10 +35,11 @@ Worker::Worker(int& ID, string& name, bool availability[], int scheduled_days[])
         employee_scheduled_days[i] = scheduled_days[i];
         //employee_requested_days_off[i];
     }
+    return;
 }
-void Worker::initialize(int& ID, string& name, bool availability[], int scheduled_days[])
+void Worker::initialize(int& ID, std::string& name, bool availability[], int scheduled_days[])
 {
-   // cout << endl << "here.";
+   // cout << '\n' << "here.";
     employee_name = name;
     employee_ID = ID;
     for (int i = 0 ; i <= 6 ; i++)
@@ -50,6 +48,7 @@ void Worker::initialize(int& ID, string& name, bool availability[], int schedule
         employee_scheduled_days[i] = scheduled_days[i];
         //employee_requested_days_off[i];
     }
+    return;
 }
 
 void Worker::SetAvailiblty(bool availability, int day)
@@ -62,22 +61,22 @@ void Worker::SetSchedule(int schedule,int day)
      employee_scheduled_days[day] = schedule;
      return;
 }
-bool Worker::GetAvailiblty(int day)
+const bool Worker::GetAvailiblty(int day)
 {
     return employee_availiblty[day];
 }
 
-int Worker::GetSchedule(int day) 
+const int Worker::GetSchedule(int day)
 {
     return employee_scheduled_days[day];
 }
 
-string Worker::GetName() 
+const std::string Worker::GetName()
 {
     return employee_name;
 }
 
-int Worker::GetID()
+const int Worker::GetID()
 {
     return employee_ID;
 }
